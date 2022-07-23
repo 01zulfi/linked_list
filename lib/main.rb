@@ -4,6 +4,7 @@ require_relative './linked_list'
 
 linked_list = LinkedList.new
 
+# rubocop:disable Lint/RedundantStringCoercion
 linked_list.prepend(1)
 linked_list.prepend(2)
 linked_list.append(2222)
@@ -31,3 +32,4 @@ linked_list.insert_at(8, linked_list.size)
 p "Insert 8 at #{linked_list.size}: #{linked_list.to_s}"
 linked_list.remove_at(3)
 p "Remote at 3: #{linked_list.to_s}"
+# rubocop:enable Lint/RedundantStringCoercion

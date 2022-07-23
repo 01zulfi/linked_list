@@ -3,6 +3,7 @@
 require_relative './node'
 
 # LinkedList class
+# rubocop:disable Metrics:ClassLength
 class LinkedList
   attr_reader :head
 
@@ -115,7 +116,7 @@ class LinkedList
 
     current = at(index)
     previous = at(index - 1)
-     
+
     previous.next_node = Node.new(value, current)
   end
 
@@ -132,7 +133,9 @@ class LinkedList
     previous = at(index - 1)
 
     previous.next_node = to_remove.next_node
+    # rubocop:disable Lint/UselessAssignment
     to_remove = nil
+    # rubocop:enable Lint/UselessAssignment
   end
 
   def to_s
@@ -160,3 +163,4 @@ class LinkedList
     current
   end
 end
+# rubocop:enable Metrics:ClassLength
