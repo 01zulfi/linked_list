@@ -25,3 +25,9 @@ p "Contains -11: #{linked_list.contains?(-11)}"
 p "Find 3: #{linked_list.find(3)}"
 p "Find -1: #{linked_list.find(-1)}"
 p "Find 4: #{linked_list.find(4)}"
+linked_list.insert_at(5, 3)
+p "Insert 5 at 3: #{linked_list.to_s}"
+linked_list.insert_at(8, linked_list.size)
+p "Insert 8 at #{linked_list.size}: #{linked_list.to_s}"
+linked_list.remove_at(3)
+p "Remote at 3: #{linked_list.to_s}"

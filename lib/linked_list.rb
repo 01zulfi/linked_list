@@ -107,6 +107,34 @@ class LinkedList
     index
   end
 
+  def insert_at(value, index)
+    return 'Not possible.' if head_empty? && !index.zero?
+    return 'Not possible.' unless index.between?(0, size)
+
+    return prepend(value) if index.zero?
+
+    current = at(index)
+    previous = at(index - 1)
+     
+    previous.next_node = Node.new(value, current)
+  end
+
+  def remove_at(index)
+    return 'Not possible.' if head_empty?
+    return 'Not possible.' unless index.between?(0, size - 1)
+
+    if index.zero?
+      @head = @head.next_node
+      return
+    end
+
+    to_remove = at(index)
+    previous = at(index - 1)
+
+    previous.next_node = to_remove.next_node
+    to_remove = nil
+  end
+
   def to_s
     return '( nil )' if head_empty?
 
